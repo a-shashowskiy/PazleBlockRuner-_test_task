@@ -5,17 +5,18 @@ using UnityEngine.Networking;
 
  public class RestGit : MonoBehaviour
 {
+//HTML Address with user data
     private readonly string basePath = "https://api.github.com/users/a-shashowskiy"; //USER DATA FROM GIT REST API
-
+//Fieald to show gata from request
     public TMPro.TMP_InputField data;
-     
+     //For Button call start corutine
     public void Get_D() => StartCoroutine(Get());
-
+//Back to main menue 
     public void Return()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
-
+//Corutine with request
     IEnumerator Get()
     {
         using(UnityWebRequest webRequest = UnityWebRequest.Get(basePath))
