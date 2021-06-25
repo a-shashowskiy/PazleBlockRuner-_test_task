@@ -4,13 +4,14 @@ using BlockRuner;
 using UnityEngine;
 using UnityEngine.UI;
 using SimpleInputNamespace;
+using TMPro;
 
 namespace BlockRuner.Player
 { 
 public class PlayerManager : MonoBehaviour
 {
-    public TMPro.TextMeshProUGUI levelName; 
-    public TMPro.TextMeshProUGUI scoreText; 
+    public TextMeshProUGUI levelName; 
+    public TextMeshProUGUI scoreText; 
     public Transform startMouve;
     public Transform finishMouve;
     [Range(0,100)]

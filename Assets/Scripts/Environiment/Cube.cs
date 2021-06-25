@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    Rigidbody rigB;
-
-    private void Start()
-    {
-        rigB = GetComponent<Rigidbody>();
-    }
-
+    Rigidbody rigB; 
 
     private void OnTriggerEnter(Collider other)
      
@@ -18,6 +12,7 @@ public class Cube : MonoBehaviour
         if(other.tag == "Player")
         {
             GetComponent<BoxCollider>().isTrigger = false;
+            rigB = gameObject.AddComponent<Rigidbody>();
             rigB.useGravity = true;
             rigB.constraints = RigidbodyConstraints.None;
             transform.parent = null;

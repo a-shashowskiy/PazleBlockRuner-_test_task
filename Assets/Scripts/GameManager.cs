@@ -97,20 +97,20 @@ namespace  BlockRuner
             PlayerPrefs.Save();
         }
         
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
-        
-        
         /// <summary>
         /// Load level from build scene in list  
         /// </summary>
         /// <param name="levelId">From scene in build list id, menu is 1 always 0 is start</param>
         public void LoadLevel(int levelId)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(levelId);
+            if (levelId <= UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings-1)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(levelId);
+            }
+            else
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings-1);
+            }
         }
  
     }
